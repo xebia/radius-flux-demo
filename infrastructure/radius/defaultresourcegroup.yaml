@@ -16,13 +16,9 @@ entries:
   id: /planes/radius/local/resourcegroups/default
 kind: Resource
 metadata:
-  creationTimestamp: "2024-08-12T23:05:17Z"
-  generation: 1
   labels:
     ucp.dev/kind: scope
     ucp.dev/resource-type: resourcegroups
     ucp.dev/scope-radius: local
   name: scope.default.f06302ccb6d113399c4a4d6bb95eeb3abffdaaaa
   namespace: radius-system
-  resourceVersion: "10549"
-  uid: 6116048f-021f-49f9-b60f-baebd71a4e41
