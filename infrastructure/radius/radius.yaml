@@ -12,7 +12,8 @@ metadata:
   name: radius
   namespace: radius-system
 spec:
-  interval: 24h
+  type: "oci"
+  interval: 5m0s
   url: oci://ghcr.io/radius-project/helm-chart
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2
