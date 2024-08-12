@@ -1,14 +1,10 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - clusterrole.yaml
-  - radius.yaml
   - applicationdeployments.yaml
+  - radius.yaml
+  - clusterrole.yaml
   - defaultresourcegroup.yaml
-
-# Annotations to enforce order
-commonAnnotations:
-  config.kubernetes.io/depends-on: |
-    - applicationdeployments.yaml
-    - defaultresourcegroup.yaml
-    - radius.yaml
+  - ./source-watcher/sourcewatcherrole.yaml
+  - ./source-watcher/sourcewatcherrolebinding.yaml
+  - ./source-watcher/sourcewatcherdeployment.yaml
