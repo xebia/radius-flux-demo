@@ -1,0 +1,62 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  annotations:
+    meta.helm.sh/release-name: radius
+    meta.helm.sh/release-namespace: radius-system
+  labels:
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: controller
+    app.kubernetes.io/part-of: radius
+    helm.toolkit.fluxcd.io/name: radius
+    helm.toolkit.fluxcd.io/namespace: radius-system
+  name: radius-controller
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - namespaces
+  - secrets
+  - events
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - apps
+  resources:
+  - deployments
+  - statefulsets
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - radapp.io
+  resources:
+  - recipes
+  - recipes/status
+  - applicationdeployments
+  - applicationdeployments/status
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - api.ucp.dev
+  resources:
+  - '*'
+  verbs:
+  - '*'
