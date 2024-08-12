@@ -4,5 +4,7 @@ metadata:
   name: radius-app
   namespace: radius-app
 spec:
-  interval: 5m
-  url: https://stefanprodan.github.io/podinfo
+  interval: 1m
+  url: https://github.com/willdavsmith/radius-flux-app
+  ref:
+    branch: main
