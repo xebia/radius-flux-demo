@@ -34,7 +34,8 @@ spec:
       interval: 12h
   values:
     controller:
-      image: ghcr.io/willdavsmith/radius:latest
+      image: ghcr.io/willdavsmith/radius/controller
+      tag: latest
 ---
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
