@@ -19,7 +19,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: radius
-  namespace: radius-helm
+  namespace: radius-system
 spec:
   interval: 30m
   chart:
