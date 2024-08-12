@@ -1,0 +1,28 @@
+apiVersion: ucp.dev/v1alpha1
+entries:
+- apiVersion: ""
+  contentType: ""
+  data:
+    createdApiVersion: 2023-10-01-preview
+    id: /planes/radius/local/resourcegroups/default
+    location: global
+    name: default
+    provisioningState: Succeeded
+    systemData: {}
+    tenantId: ""
+    type: System.Resources/resourceGroups
+    updatedApiVersion: 2023-10-01-preview
+  etag: 20-7ec2d6f1e85909f6739fd047bfc1e3bbfc712670
+  id: /planes/radius/local/resourcegroups/default
+kind: Resource
+metadata:
+  creationTimestamp: "2024-08-12T23:05:17Z"
+  generation: 1
+  labels:
+    ucp.dev/kind: scope
+    ucp.dev/resource-type: resourcegroups
+    ucp.dev/scope-radius: local
+  name: scope.default.f06302ccb6d113399c4a4d6bb95eeb3abffdaaaa
+  namespace: radius-system
+  resourceVersion: "10549"
+  uid: 6116048f-021f-49f9-b60f-baebd71a4e41
