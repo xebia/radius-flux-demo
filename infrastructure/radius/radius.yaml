@@ -40,7 +40,7 @@ spec:
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
-  name: contour
+  name: bitnami
   namespace: radius-system
 spec:
   interval: 5m0s
@@ -55,11 +55,11 @@ spec:
   interval: 30m
   chart:
     spec:
-      chart: contour
+      chart: bitnami/contour
       version: "11.1.1"
       sourceRef:
         kind: HelmRepository
-        name: contour
+        name: bitnami
         namespace: radius-system
       interval: 12h
 ---
