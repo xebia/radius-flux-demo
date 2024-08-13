@@ -37,14 +37,6 @@ spec:
                   fieldPath: metadata.namespace
           args:
             - --log-level=info
-          livenessProbe:
-            httpGet:
-              port: http
-              path: /
-          readinessProbe:
-            httpGet:
-              port: http
-              path: /
           resources:
             limits:
               cpu: 1000m

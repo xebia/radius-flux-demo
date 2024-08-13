@@ -4,7 +4,7 @@ metadata:
   annotations:
     meta.helm.sh/release-name: radius
     meta.helm.sh/release-namespace: radius-system
-    fluxcd.io/depends-on: "HelmRelease/radius"
+    fluxcd.io/depends-on: "HelmRelease/radius.radius-system"
   labels:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: controller
