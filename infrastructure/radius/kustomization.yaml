@@ -7,3 +7,4 @@ resources:
   - ./source-watcher/serviceaccount.yaml
   - ./source-watcher/rbac.yaml
   - ./source-watcher/deployment.yaml
+  - ./contour.yaml
