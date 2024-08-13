@@ -23,7 +23,6 @@ metadata:
   namespace: radius-system
 spec:
   interval: 30m
-  wait: true
   chart:
     spec:
       chart: radius
