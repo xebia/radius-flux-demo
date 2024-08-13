@@ -16,6 +16,8 @@ entries:
   id: /planes/radius/local/resourcegroups/default
 kind: Resource
 metadata:
+  annotations:
+    fluxcd.io/depends-on: "HelmRelease/radius"
   labels:
     ucp.dev/kind: scope
     ucp.dev/resource-type: resourcegroups
