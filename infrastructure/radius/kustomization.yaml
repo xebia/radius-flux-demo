@@ -4,7 +4,6 @@ resources:
   - radius.yaml
   - applicationdeployments.yaml
   - clusterrole.yaml
-  - defaultresourcegroup.yaml
   - ./source-watcher/serviceaccount.yaml
   - ./source-watcher/rbac.yaml
   - ./source-watcher/deployment.yaml
@@ -13,6 +12,5 @@ commonAnnotations:
     - radius.yaml
     - applicationdeployments.yaml
     - clusterrole.yaml
-    - defaultresourcegroup.yaml
     - ./source-watcher/serviceaccount.yaml
     - ./source-watcher/rbac.yaml
