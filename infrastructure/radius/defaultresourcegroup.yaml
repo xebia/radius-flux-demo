@@ -17,7 +17,7 @@ entries:
 kind: Resource
 metadata:
   annotations:
-    fluxcd.io/depends-on: "HelmRelease/radius-system/radius"
+    fluxcd.io/depends-on: "HelmRelease/radius.radius-system"
   labels:
     ucp.dev/kind: scope
     ucp.dev/resource-type: resourcegroups
