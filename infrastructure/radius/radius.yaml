@@ -55,7 +55,7 @@ spec:
   interval: 30m
   chart:
     spec:
-      chart: bitnami/contour
+      chart: contour
       version: "11.1.1"
       sourceRef:
         kind: HelmRepository
