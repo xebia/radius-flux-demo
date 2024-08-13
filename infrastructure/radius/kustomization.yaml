@@ -5,6 +5,6 @@ resources:
   - radius.yaml
   - clusterrole.yaml
   - defaultresourcegroup.yaml
-  - ./source-watcher/sourcewatcherrole.yaml
-  - ./source-watcher/sourcewatcherrolebinding.yaml
-  - ./source-watcher/sourcewatcherdeployment.yaml
+  - ./source-watcher/serviceaccount.yaml
+  - ./source-watcher/rbac.yaml
+  - ./source-watcher/deployment.yaml
