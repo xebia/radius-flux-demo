@@ -2,16 +2,52 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: infra-radius
+  name: infra-radius-radius
   namespace: flux-system
 spec:
   interval: 1h
   retryInterval: 1m
-  timeout: 1m
+  timeout: 5m
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./infrastructure/radius
+  path: ./infrastructure/radius/radius
+  prune: true
+  wait: true
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: infra-radius-configs
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: infra-radius-radius
+  interval: 1h
+  retryInterval: 1m
+  timeout: 5m
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./infrastructure/radius/configs
+  prune: true
+  wait: true
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: infra-radius-controllers
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: infra-radius-controllers
+  interval: 1h
+  retryInterval: 1m
+  timeout: 5m
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  path: ./infrastructure/radius/controllers
   prune: true
   wait: true
 ---
