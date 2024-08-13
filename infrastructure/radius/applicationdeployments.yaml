@@ -7,6 +7,7 @@ metadata:
   creationTimestamp: null
   name: applicationdeployments.radapp.io
 spec:
+  serviceaccountName: radius-flux-controller
   group: radapp.io
   names:
     categories:
