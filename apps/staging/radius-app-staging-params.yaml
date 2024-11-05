@@ -10,6 +10,6 @@ spec:
         "value": "radius-app"
       },
       "replicas": {
-        "value": 5
+        "value": 3
       }
     }
