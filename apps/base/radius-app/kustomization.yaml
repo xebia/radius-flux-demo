@@ -3,5 +3,4 @@ kind: Kustomization
 namespace: radius-app
 resources:
   - namespace.yaml
-  - repository.yaml
   - deploymenttemplate.yaml
