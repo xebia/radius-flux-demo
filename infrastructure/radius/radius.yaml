@@ -27,7 +27,7 @@ spec:
   chart:
     spec:
       chart: radius
-      version: latest
+      version: "0.39.0"
       sourceRef:
         kind: HelmRepository
         name: radius
