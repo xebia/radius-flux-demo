@@ -17,7 +17,7 @@ spec:
         "_generator": {
           "name": "bicep",
           "version": "0.30.23.60470",
-          "templateHash": "4674526337211992031"
+          "templateHash": "1146957496148302811"
         }
       },
       "parameters": {
@@ -80,6 +80,10 @@ spec:
                 {
                   "kind": "manualScaling",
                   "replicas": "[parameters('replicas')]"
+                },
+                {
+                  "kind": "kubernetesNamespace",
+                  "namespace": "[parameters('namespace')]"
                 }
               ]
             }
