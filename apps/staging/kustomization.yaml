@@ -1,0 +1,8 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../base/radius-app
+patches:
+  - path: radius-app-staging-params.yaml
+    target:
+      kind: DeploymentTemplate
