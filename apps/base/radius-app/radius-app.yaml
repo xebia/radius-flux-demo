@@ -40,7 +40,7 @@ spec:
         "_EXPERIMENTAL_WARNING": "This template uses ARM features that are experimental. Experimental features should be enabled for testing purposes only, as there are no guarantees about the quality or stability of these features. Do not enable these settings for any production usage, or your production environment may be subject to breaking.",
         "_generator": {
           "name": "bicep",
-          "templateHash": "10073532516773173145",
+          "templateHash": "3822249280419881165",
           "version": "0.31.34.60546"
         }
       },
@@ -79,7 +79,7 @@ spec:
                 "image": "ghcr.io/radius-project/samples/demo:latest",
                 "ports": {
                   "web": {
-                    "containerPort": 3000
+                    "containerPort": 3001
                   }
                 }
               },
