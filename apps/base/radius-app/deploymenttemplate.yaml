@@ -16,8 +16,8 @@ spec:
         ],
         "_generator": {
           "name": "bicep",
-          "version": "0.30.23.60470",
-          "templateHash": "1146957496148302811"
+          "version": "0.31.34.60546",
+          "templateHash": "10073532516773173145"
         }
       },
       "parameters": {
@@ -25,7 +25,7 @@ spec:
           "type": "string"
         },
         "replicas": {
-          "type": "int"
+          "type": "string"
         }
       },
       "imports": {
@@ -79,7 +79,7 @@ spec:
               "extensions": [
                 {
                   "kind": "manualScaling",
-                  "replicas": "[parameters('replicas')]"
+                  "replicas": "[int(parameters('replicas'))]"
                 },
                 {
                   "kind": "kubernetesNamespace",
