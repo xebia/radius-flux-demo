@@ -9,11 +9,12 @@ on:
 env:
   BICEP_FILE: ./bicep/radius-app.bicep
 
-permissions:
-  pull-requests: write
-
 jobs:
   generate-manifest:
+
+    permissions:
+      pull-requests: write
+      contents: write
 
     runs-on: ubuntu-latest
 
