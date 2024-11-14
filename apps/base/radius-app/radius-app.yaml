@@ -1,0 +1,114 @@
+apiVersion: radapp.io/v1alpha3
+kind: DeploymentTemplate
+metadata:
+  name: radius-app.bicep
+  namespace: radius-system
+spec:
+  parameters:
+    namespace: radius-app
+  providerConfig: |-
+    {
+      "radius": {
+        "type": "radius",
+        "value": {
+          "scope": "/planes/radius/local/resourceGroups/default"
+        }
+      },
+      "deployments": {
+        "type": "Microsoft.Resources",
+        "value": {
+          "scope": "/planes/radius/local/resourceGroups/default"
+        }
+      }
+    }
+  rootFileName: radius-app.bicep
+  template: |-
+    {
+      "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+      "contentVersion": "1.0.0.0",
+      "imports": {
+        "Radius": {
+          "provider": "Radius",
+          "version": "latest"
+        }
+      },
+      "languageVersion": "2.1-experimental",
+      "metadata": {
+        "_EXPERIMENTAL_FEATURES_ENABLED": [
+          "Extensibility"
+        ],
+        "_EXPERIMENTAL_WARNING": "This template uses ARM features that are experimental. Experimental features should be enabled for testing purposes only, as there are no guarantees about the quality or stability of these features. Do not enable these settings for any production usage, or your production environment may be subject to breaking.",
+        "_generator": {
+          "name": "bicep",
+          "templateHash": "10073532516773173145",
+          "version": "0.31.34.60546"
+        }
+      },
+      "parameters": {
+        "namespace": {
+          "type": "string"
+        },
+        "replicas": {
+          "type": "string"
+        }
+      },
+      "resources": {
+        "app": {
+          "dependsOn": [
+            "env"
+          ],
+          "import": "Radius",
+          "properties": {
+            "name": "app",
+            "properties": {
+              "environment": "[reference('env').id]"
+            }
+          },
+          "type": "Applications.Core/applications@2023-10-01-preview"
+        },
+        "ctnr": {
+          "dependsOn": [
+            "app"
+          ],
+          "import": "Radius",
+          "properties": {
+            "name": "ctnr",
+            "properties": {
+              "application": "[reference('app').id]",
+              "container": {
+                "image": "ghcr.io/radius-project/samples/demo:latest",
+                "ports": {
+                  "web": {
+                    "containerPort": 3000
+                  }
+                }
+              },
+              "extensions": [
+                {
+                  "kind": "manualScaling",
+                  "replicas": "[int(parameters('replicas'))]"
+                },
+                {
+                  "kind": "kubernetesNamespace",
+                  "namespace": "[parameters('namespace')]"
+                }
+              ]
+            }
+          },
+          "type": "Applications.Core/containers@2023-10-01-preview"
+        },
+        "env": {
+          "import": "Radius",
+          "properties": {
+            "name": "env",
+            "properties": {
+              "compute": {
+                "kind": "kubernetes",
+                "namespace": "[parameters('namespace')]"
+              }
+            }
+          },
+          "type": "Applications.Core/environments@2023-10-01-preview"
+        }
+      }
+    }
