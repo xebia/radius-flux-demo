@@ -111,4 +111,3 @@ spec:
     }
   parameters:
     namespace: 'radius-app'
-    replicas: '1'
