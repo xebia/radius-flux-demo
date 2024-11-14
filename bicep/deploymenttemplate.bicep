@@ -1,7 +1,7 @@
 extension radius
 
 param namespace string
-param replicas int
+param replicas string
 
 resource env 'Applications.Core/environments@2023-10-01-preview' = {
   name: 'env'
@@ -35,7 +35,7 @@ resource ctnr 'Applications.Core/containers@2023-10-01-preview' = {
     extensions: [
       {
         kind: 'manualScaling'
-        replicas: replicas
+        replicas: int(replicas)
       }
       {
         kind: 'kubernetesNamespace'

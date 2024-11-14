@@ -4,12 +4,5 @@ metadata:
   name: radius-app.bicep
   namespace: radius-system
 spec:
-  parameters: |
-    {
-      "namespace": {
-        "value": "radius-app"
-      },
-      "replicas": {
-        "value": 6
-      }
-    }
+  parameters:
+    replicas: '5'
