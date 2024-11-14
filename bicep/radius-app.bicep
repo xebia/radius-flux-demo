@@ -4,7 +4,7 @@ param namespace string
 param replicas string
 
 resource env 'Applications.Core/environments@2023-10-01-preview' = {
-  name: 'env'
+  name: 'env2'
   properties: {
     compute: {
       kind: 'kubernetes'
@@ -28,7 +28,7 @@ resource ctnr 'Applications.Core/containers@2023-10-01-preview' = {
       image: 'ghcr.io/radius-project/samples/demo:latest'
       ports: {
         web: {
-          containerPort: 3000
+          containerPort: 3001
         }
       }
     }
