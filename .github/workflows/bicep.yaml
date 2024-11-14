@@ -9,12 +9,11 @@ on:
 env:
   BICEP_FILE: ./bicep/radius-app.bicep
 
+permissions:
+  pull-requests: write
+
 jobs:
   generate-manifest:
-
-    permissions:
-      contents: write
-      pull-requests: write
 
     runs-on: ubuntu-latest
 
@@ -40,8 +39,8 @@ jobs:
       uses: peter-evans/create-pull-request@v7
       with: 
         branch: "update-kubernetes-manifest-${{ steps.generate-commit-metadata.outputs.RUN_IDENTIFIER }}"
-        commit-message: "Update Kubernetes manifest"
-        title: "Update Kubernetes manifest"
+        commit-message: "Update Kubernetes manifest ${{ steps.generate-commit-metadata.outputs.RUN_IDENTIFIER }}"
+        title: "Update Kubernetes manifest ${{ steps.generate-commit-metadata.outputs.RUN_IDENTIFIER }}"
         body: |
           This PR updates the Kubernetes manifest.
         base: main
