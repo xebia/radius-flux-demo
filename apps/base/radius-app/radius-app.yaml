@@ -40,7 +40,7 @@ spec:
         "_EXPERIMENTAL_WARNING": "This template uses ARM features that are experimental. Experimental features should be enabled for testing purposes only, as there are no guarantees about the quality or stability of these features. Do not enable these settings for any production usage, or your production environment may be subject to breaking.",
         "_generator": {
           "name": "bicep",
-          "templateHash": "3822249280419881165",
+          "templateHash": "2877961688213351605",
           "version": "0.31.34.60546"
         }
       },
@@ -100,7 +100,7 @@ spec:
         "env": {
           "import": "Radius",
           "properties": {
-            "name": "env",
+            "name": "env1",
             "properties": {
               "compute": {
                 "kind": "kubernetes",
