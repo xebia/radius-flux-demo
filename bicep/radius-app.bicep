@@ -4,7 +4,7 @@ param namespace string
 param replicas string
 
 resource env 'Applications.Core/environments@2023-10-01-preview' = {
-  name: 'env2'
+  name: 'env'
   properties: {
     compute: {
       kind: 'kubernetes'
