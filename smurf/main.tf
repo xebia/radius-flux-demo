@@ -15,7 +15,3 @@ output "hello_world" {
 output "name" {
   value = "smurf2"
 }
-
-output "name" {
-  value = "smurf2"
-}
