@@ -5,4 +5,4 @@ metadata:
   namespace: radius-system
 spec:
   parameters:
-    replicas: '3'
+    replicas: "2"
