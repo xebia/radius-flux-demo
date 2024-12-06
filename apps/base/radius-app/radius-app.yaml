@@ -40,7 +40,7 @@ spec:
         "_EXPERIMENTAL_WARNING": "This template uses ARM features that are experimental. Experimental features should be enabled for testing purposes only, as there are no guarantees about the quality or stability of these features. Do not enable these settings for any production usage, or your production environment may be subject to breaking.",
         "_generator": {
           "name": "bicep",
-          "templateHash": "1403051062774092641",
+          "templateHash": "6734738669955315996",
           "version": "0.31.92.45157"
         }
       },
@@ -68,13 +68,19 @@ spec:
         },
         "ctnr": {
           "dependsOn": [
-            "app"
+            "app",
+            "db"
           ],
           "import": "Radius",
           "properties": {
             "name": "ctnr",
             "properties": {
               "application": "[reference('app').id]",
+              "connections": {
+                "redis": {
+                  "source": "[reference('db').id]"
+                }
+              },
               "container": {
                 "image": "ghcr.io/radius-project/samples/demo:latest",
                 "ports": {
@@ -96,6 +102,21 @@ spec:
             }
           },
           "type": "Applications.Core/containers@2023-10-01-preview"
+        },
+        "db": {
+          "dependsOn": [
+            "app",
+            "env"
+          ],
+          "import": "Radius",
+          "properties": {
+            "name": "db",
+            "properties": {
+              "application": "[reference('app').id]",
+              "environment": "[reference('env').id]"
+            }
+          },
+          "type": "Applications.Datastores/redisCaches@2023-10-01-preview"
         },
         "env": {
           "import": "Radius",
