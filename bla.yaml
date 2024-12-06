@@ -1,0 +1,82 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  annotations:
+    meta.helm.sh/release-name: tf-controller
+    meta.helm.sh/release-namespace: flux-system
+  creationTimestamp: "2024-12-06T12:34:09Z"
+  labels:
+    app.kubernetes.io/managed-by: Helm
+    helm.toolkit.fluxcd.io/name: tf-controller
+    helm.toolkit.fluxcd.io/namespace: flux-system
+  name: tf-manager-role
+  resourceVersion: "13149265"
+  uid: 74420807-76eb-40ff-a155-20fa3403bf90
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - configmaps
+      - secrets
+      - serviceaccounts
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - ""
+    resources:
+      - events
+    verbs:
+      - create
+      - patch
+  - apiGroups:
+      - infra.contrib.fluxcd.io
+    resources:
+      - terraforms
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+  - apiGroups:
+      - infra.contrib.fluxcd.io
+    resources:
+      - terraforms/finalizers
+    verbs:
+      - create
+      - delete
+      - get
+      - patch
+      - update
+  - apiGroups:
+      - infra.contrib.fluxcd.io
+    resources:
+      - terraforms/status
+    verbs:
+      - get
+      - patch
+      - update
+  - apiGroups:
+      - source.toolkit.fluxcd.io
+    resources:
+      - buckets
+      - gitrepositories
+      - ocirepositories
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - delete
+  - apiGroups:
+      - source.toolkit.fluxcd.io
+    resources:
+      - buckets/status
+      - gitrepositories/status
+      - ocirepositories/status
+    verbs:
+      - get
