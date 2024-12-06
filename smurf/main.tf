@@ -15,3 +15,7 @@ output "hello_world" {
 output "name" {
   value = "smurf3"
 }
+
+output "name2" {
+  value = "smurf4"
+}
