@@ -9,7 +9,11 @@ variable "subject" {
 }
 
 output "hello_world" {
-  value = "Hello TF Controller v0.16.0-rc.2, ${var.subject}!"
+  value = "Hello TF Controller v0.16.0-rc.4, ${var.subject}!"
+}
+
+output "name" {
+  value = "smurf2"
 }
 
 output "name" {
