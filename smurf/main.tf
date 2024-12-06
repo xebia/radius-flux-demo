@@ -13,5 +13,5 @@ output "hello_world" {
 }
 
 output "name" {
-  value = "smurf"
+  value = "smurf2"
 }
