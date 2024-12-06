@@ -35,7 +35,7 @@ resource ctnr 'Applications.Core/containers@2023-10-01-preview' = {
     extensions: [
       {
         kind: 'manualScaling'
-        replicas: int(replicas)
+        replicas: 5
       }
       {
         kind: 'kubernetesNamespace'
