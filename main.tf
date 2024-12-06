@@ -1,3 +1,0 @@
-output "time" {
-  value = timestamp()
-}
