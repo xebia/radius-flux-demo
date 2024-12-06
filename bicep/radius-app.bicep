@@ -42,5 +42,18 @@ resource ctnr 'Applications.Core/containers@2023-10-01-preview' = {
         namespace: namespace
       }
     ]
+    connections: {
+      redis: {
+        source: db.id
+      }
+    }
+  }
+}
+
+resource db 'Applications.Datastores/redisCaches@2023-10-01-preview' = {
+  name: 'db'
+  properties: {
+    application: app.id
+    environment: env.id
   }
 }
